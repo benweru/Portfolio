@@ -1,18 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function OnRest() {
+function App() {
   return (
-    <div className="OnRest">
-      <header className="OnRest-header">
-        <img src={logo} className=" OnRest-header" alt="logo" />
-        <p>
-          <code>Tanui.Inc</code>
-        </p>
-      
-       </header>
+    <div className="text-center">
+      <h1 className="text-3xl font-bold text-blue-600">Welcome to My Portfolio 🚀</h1>
     </div>
   );
 }
 
-export default OnRest;
+export default App;
