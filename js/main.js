@@ -74,7 +74,15 @@
         const preloader = document.querySelector('#preloader');
         if (!preloader) return;
         
-        window.addEventListener('load', function() {
+        let preloaderTimeout;
+        let isLoaded = false;
+        
+        const hidePreloader = function() {
+            if (isLoaded) return;
+            isLoaded = true;
+            
+            if (preloaderTimeout) clearTimeout(preloaderTimeout);
+            
             document.querySelector('html').classList.remove('ss-preload');
             document.querySelector('html').classList.add('ss-loaded');
 
@@ -82,8 +90,29 @@
                 item.classList.remove('ss-animated');
             });
 
-            tl.play();
+            if (typeof anime !== 'undefined' && tl) {
+                tl.play();
+            } else {
+                // Fallback if anime.js didn't load
+                preloader.style.opacity = '0';
+                setTimeout(function() {
+                    preloader.style.visibility = 'hidden';
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        };
+        
+        // Set a timeout fallback (5 seconds max wait)
+        preloaderTimeout = setTimeout(hidePreloader, 5000);
+        
+        window.addEventListener('load', function() {
+            hidePreloader();
         });
+        
+        // Also check if DOM is ready and resources are mostly loaded
+        if (document.readyState === 'complete') {
+            setTimeout(hidePreloader, 100);
+        }
 
         // force page scroll position to top at page refresh
         // window.addEventListener('beforeunload' , function () {
