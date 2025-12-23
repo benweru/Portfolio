@@ -1,324 +1,592 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js ss-preload" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julian Tanui Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ 
+    <meta charset="utf-8">
+    <title>Tanui</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+   
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
 </head>
-<body>
-    <!-- Animated Background -->
-    <div class="bg-animation"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo"></div>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contacts</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<body id="top">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-           <h1>Hi, I'm Julian Tanui - Software Developer <span class="typing-text">Web Developer</span></h1>
-            <p class="hero-subtitle">Full Stack Developer & ML/AI Engineer</p>
-            <p class="hero-description">I create beautiful, responsive web applications using modern technologies</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="cta-button primary">View My Work</a>
-                <a href="#contact" class="cta-button secondary">Get In Touch</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate full-stack developer with a love for creating innovative web solutions. With expertise in modern web technologies, I bring ideas to life through clean, efficient code and intuitive user experiences.</p>
-                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying a good cup of chocolate while brainstorming the next big idea to help milions of people through leveraging tech.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="43">0</h3>
-                            <p>Projects Completed</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="4">0</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="32">0</h3>
-                            <p>Happy Clients</p>
-                        </div>
-                    </div>
-                </div>
-                    <div class="about-image">
-                    <div class="image-placeholder">
-                        <i class="fas fa-user"></i>
-                        <div class="image-overlay">
-                        <img src="images/porsche.jpg" alt="Profile Photo">
-                        </div>
-                    </div>
-                    </div>
-            </div>
+    <div id="preloader">
+        <div id="loader">
         </div>
-    </section>
+    </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-server"></i>
-                            <span>Express.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-code-branch"></i>
-                            <span>Version Control</span>
-                     </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-aws"></i>
-                            <span>AWS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>Postman</span>
-                            </div>
-                        <div class="skill-item">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Responsive Design</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    <div class="s-pagewrap">
+
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </section>
+        <header class="s-header">
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">Design</button>
+            <div class="header-mobile">
+                <span class="mobile-home-link"><a href="index.html">Tanui.</a></span>
+                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
             </div>
-            <div class="projects-grid">
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                               <!-- Replace icon placeholder with an image -->
-        <img src="images/237870a5-f1ec-4b6c-afe6-df4e99694b05.jpeg" alt="CasaControl Project Screenshot" class="project-thumbnail">
-                        <div class="project-overlay">
-                            <div class="project-links">
+
+            <div class="row wide main-nav-wrap">
+                <nav class="column lg-12 main-nav">
+                    <ul>
+                        <li><a href="index.html" class="home-link">Tanui.</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
+                        <li><a href="#download-cv" class="smoothscroll">CV</a></li>
+                        <li><a href="#about" class="smoothscroll">About</a></li>
+                        <li><a href="#works" class="smoothscroll">Projects</a></li>
+                        <li><a href="#contact" class="smoothscroll">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- ## main content -->
+        <main class="s-content">
+
+
+            <!-- hero section -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="row intro-content wide">
+
+                    <div class="column">
+                        <div class="text-pretitle with-line">
+                             WELCOME
+                        </div>
+
+                        <h1 class="text-huge-title">
+                            I am Julian Tanui,
+                            a Freelance Digital Designer 
+                            & Fullstack 
+                            Developer based 
+                            in Nairobi, Kenya.
+                        </h1>
+                    </div>
+
+                
+
+                </div> <!-- end hero content -->
+
+                <a href="#about" class="intro-scrolldown smoothscroll">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
+                </a>
+
+            </section> <!-- end s-intro -->
+
+
+            <!-- Download CV section -->
+            <section id="download-cv" class="s-download-cv target-section">
+
+                <div class="row download-cv-content wide">
+                    <div class="column lg-12" data-animate-block>
+                        <h2 class="text-pretitle" data-animate-el>
+                            Get My Resume
+                        </h2>
+                        <p class="h1" data-animate-el>
+                            Download my CV to learn more about my experience and skills.
+                        </p>
                         
-                                <a href="https://github.com/tanuithecreator/CasaControl" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
+                        <div class="download-cv-actions" data-animate-el>
+                            <a href="assets/cv/Julian Tanui CV.pdf" 
+                               download="Julian_Tanui_CV.pdf" 
+                               class="btn btn--primary btn--medium download-cv-btn"
+                               aria-label="Download CV as PDF"
+                               id="cv-download-btn">
+                                Download CV
+                            </a>
+                            <a href="assets/cv/Julian Tanui CV.pdf" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="download-cv-link"
+                               aria-label="View CV in new tab">
+                                or view in browser
+                            </a>
                         </div>
                     </div>
-                    <div class="project-info">
-                         <h3>CasaControl</h3>
-            <p>A Mobile Application for Smart Home Management</p>
-                        <div class="project-tech">
-                            <span>Kotlin</span>
-                            <span>Firebase</span>
+                </div>
+            </section> <!-- end s-download-cv -->
+
+
+            <!-- about me section -->
+            <section id="about" class="s-about target-section">
+
+
+                <div class="row about-info wide" data-animate-block>
+
+                    <div class="column lg-6 md-12 about-info__pic-block">
+                        <img src="assets/images/about-photo.jpeg" 
+                             srcset="assets/images/about-photo.jpeg 1x" alt="" class="about-info__pic" data-animate-el>
+                    </div>
+
+                    <div class="column lg-6 md-12">
+                        <div class="about-info__text" >
+
+                            <h2 class="text-pretitle with-line" data-animate-el>
+                                About
+                            </h2>
+                            <p class="attention-getter" data-animate-el>
+                               I am an aspiring software developer currently pursuing a Bachelor of Science in Informatics and Computer Science, with a focus on Artificial Intelligence, Data Science, as well as UX/UI design with Figma. I excel in collaborative environments and have a keen interest in the UN SDGs, actively volunteering for initiatives that drive positive change.
+                            </p>
+                         
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card" data-category="mobile">
-                    <div class="project-image">
-                             <img src="images/donate , charity for medical and health background….jpeg" alt="CasaControl Project Screenshot" class="project-thumbnail">
+ <!-- about-info -->
 
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/tanuithecreator/IS1" class="project-link"><i class="fab fa-github"></i></a>
+
+                <div class="row about-expertise" data-animate-block>
+                    <div class="column lg-12">
+
+                        <h2 class="text-pretitle" data-animate-el>Expertise</h2>
+
+                        <ul class="skills-list h1" data-animate-el>
+                            <li>Artifical Intelligence</li>
+                            <li>Flutter</li>
+                            <li>UI Design</li>
+                            <li>Python</li>
+                            <li>IoT Prototyping</li>
+                            <li>Upcycling</li>
+                            <li>Project management</li>
+                        </ul>
+
+                    </div>
+                </div> <!-- end about-expertise -->
+
+
+                <div class="row about-timelines" data-animate-block>
+
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Experience
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">CIC Insurance Group</h3>
+                                    <h5 class="timeline__meta">ICT intern</h5>
+                                    <p class="timeline__timeframe">Jan 2025 - April 2025</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>•	Troubleshot basic network issues and reported outages or performance concerns. <br>
+•	Provided help desk support by responding to employee tickets and escalating complex issues. <br>
+•	Set up and configured laptops, desktops, and mobile devices; ensured network/domain connectivity.
+</p>
+                                </div>
+                            </div>
+    
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Kenya National Library Service (KNLS)</h4>
+                                    <h5 class="timeline__meta">Volunteer</h5>
+                                    <p class="timeline__timeframe">Jan 2024 - Apr 2024 </p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>•	Taught basic computer literacy skills to students in the facility, improving their proficiency and confidence in using technology. <br>
+•	Assisted in organizing educational workshops and fostering a collaborative learning environment. <br>
+•	Assisted in front desk services as well as arrangement of books.
+
+                                    </p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
+
+                    </div> <!-- end column -->
+
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Education
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Strathmore University, Nairobi</h3>
+                                    <h5 class="timeline__meta">BSc. in Informatics and Computer Science </h5>
+                                    <p class="timeline__timeframe">June 2022 - Present</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>Expected Graduation: June 2026. <br>
+                                 Dean’s List (2022-2023, 2024-2025) <br>
+• Local Committee Vice President for Finance and Legalities and Project Manager for SDG Hub in Strathmore
+                                    </p>
+                                </div>
+                            </div>
+    
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Moi High School, Kabarak</h4>
+                                    <h5 class="timeline__meta">Kenya Certificate of Secondary Education</h5>
+                                    <p class="timeline__timeframe">2018-2021</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>Mean Grade A-
+• Attended Open P-TECH course on emerging technologies.
+• Active in Chess Club, Football, and Kenya Drama Festival.</p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
+                        
+                    </div> <!-- end column -->
+
+
+                </div> <!-- end about-timelines -->
+
+            </section> <!-- end s-about -->
+
+
+            <!-- Projects -->
+            <section id="works" class="s-works target-section">
+
+
+                <div class="row works-portfolio">
+
+                    <div class="column lg-12" data-animate-block>
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Recent Projects
+                        </h2>
+                        <p class="h1" data-animate-el>
+                            Here are some of my favourite projects. Feel free to check them out.
+                        </p>
+    
+                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-01">
+                                    <div class="folio-list__item-pic">
+                                        <img src="assets/images/portfolio/fuji.jpg"
+                                             srcset="assets/images/portfolio/fuji.jpg 1x, assets/images/portfolio/fuji@2x.jpg 2x"  alt="">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                         ML + Web Application
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            DeepDetect.
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-03">
+                                    <div class="folio-list__item-pic">
+                                        <img src="assets/images/portfolio/rucksack.jpg" 
+                                             srcset="assets/images/portfolio/rucksack.jpg 1x, assets/images/portfolio/rucksack@2x.jpg 2x" alt="">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                           IoT + AI 
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            SmartFarm
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-06">
+                                    <div class="folio-list__item-pic">
+                                        <img src="assets/images/portfolio/minimalismo.jpg" 
+                                             srcset="assets/images/portfolio/minimalismo.jpg 1x, assets/images/portfolio/minimalismo@2x.jpg 2x" alt="">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                           Kotlin + Firebase
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                           CASAcontrol.
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-07">
+                                    <div class="folio-list__item-pic">
+                                        <img src="assets/images/portfolio/rag-gaming.jpg" 
+                                             srcset="assets/images/portfolio/rag-gaming.jpg 1x, assets/images/portfolio/rag-gaming@2x.jpg 2x" alt="RAG Gaming Assistant">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                           RAG + LLM + Web App
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                           RAG Gaming Assistant.
+                                        </div>
+                                    </div>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                        </ul> <!-- end folio-list -->
+
+                    </div> <!-- end column -->
+
+
+                    <!-- Modal Templates Popup-->
+                    <div id="modal-01" hidden>
+                        <div class="modal-popup">
+                            <div class="modal-popup__desc">
+                                <h5>DeepDetect</h5>
+                                <p>DeepDetect is an explainable deep-learning system designed to detect forged images and videos circulating across online news outlets, social media platforms, and broadcast media. The system integrates a specialized CNN model trained on diverse data distributions, a comprehensive image and video analysis pipeline, GRAD-CAM explainability features, and a production-ready web application with full authentication and administrative capabilities.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Machine Learning</li>
+                                    <li>Deep Learning</li>
+                                    <li>Web Application</li>
+                                    <li>Computer Vision</li>
+                                </ul>
+                                <div class="modal-popup__links">
+                                    <a href="https://github.com/tanuithecreator/Deepfake-Image-Detection" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--repo" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                                        View Repo
+                                    </a>
+                                    <a href="https://deepdetect-demo.com" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--live" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"/><path d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"/></svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- end modal -->
+
+                       
+                    <div id="modal-03" hidden>
+                        <div class="modal-popup">
+                            <div class="modal-popup__desc">
+                                <h5>IoT-Based Smart Hydroponic Monitoring System</h5>
+                                <p>Currently developing a proposal for a smart IoT-powered hydroponic farming system aimed at optimizing leafy green production in resource-constrained environments.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Smart farm</li>
+                                </ul>
+                                <div class="modal-popup__links">
+                                    <a href="https://github.com/Fidelisaboke/IoT-Smart-Farming-Assistant" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--repo" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                                        View Repo
+                                    </a>
+                                    <a href="https://smartfarm-demo.com" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--live" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"/><path d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"/></svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- end modal -->
+
+
+                    <div id="modal-06" hidden>
+                        <div class="modal-popup">
+                            <div class="modal-popup__desc">
+                                <h5>CASAcontrol</h5>
+                                <p>CASAcontrol is a smart home management system designed to simplify how users interact with and manage household devices. It provides a centralized platform through which everyday appliances such as lighting, sockets, and electronic equipment can be controlled remotely using a mobile application. By connecting to the home Wi-Fi network, CASAcontrol enables seamless communication between the user and connected devices, allowing for convenient control from anywhere.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Kotlin</li>
+                                    <li>Firebase</li>
+                                    <li>Mobile App</li>
+                                </ul>
+                                <div class="modal-popup__links">
+                                    <a href="https://github.com/tanuithecreator/CasaControl" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--repo" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                                        View Repo
+                                    </a>
+                                    <a href="https://casacontrol-demo.com" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--live" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"/><path d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"/></svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-07" hidden>
+                        <div class="modal-popup">
+                            <div class="modal-popup__desc">
+                                <h5>RAG Gaming Assistant</h5>
+                                <p>An intelligent Q&A system for game documentation, lore, and mechanics. This RAG (Retrieval-Augmented Generation) application helps developers and players create an intelligent assistant that can answer questions about game content. The system features a clean, modern web interface with configuration options for assistant persona, detail level, and domain filtering. Built with advanced LLM integration and a comprehensive document processing pipeline.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>RAG</li>
+                                    <li>LLM</li>
+                                    <li>Web Application</li>
+                                    <li>AI</li>
+                                </ul>
+                                <div class="modal-popup__links">
+                                    <a href="https://github.com/tanuithecreator/GameRAGassistant" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--repo" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                                        View Repo
+                                    </a>
+                                    <a href="https://gamingragassistant-xlr8.streamlit.app/" target="_blank" rel="noopener noreferrer" class="modal-popup__link modal-popup__link--live" onclick="event.stopPropagation();">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8.636 3.5a.5.5 0 00-.5-.5H1.5A1.5 1.5 0 000 4.5v10A1.5 1.5 0 001.5 16h10a1.5 1.5 0 001.5-1.5V7.864a.5.5 0 00-1 0V14.5a.5.5 0 01-.5.5h-10a.5.5 0 01-.5-.5v-10a.5.5 0 01.5-.5h6.636a.5.5 0 00.5-.5z"/><path d="M16 .5a.5.5 0 00-.5-.5h-5a.5.5 0 000 1h3.793L6.146 9.146a.5.5 0 10.708.708L15 1.707V5.5a.5.5 0 001 0v-5z"/></svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end modal -->
+                </div> 
+                <!-- end works-portfolio -->
+
+
+               
+            </section> <!-- end s-works -->
+            <!-- contact -->
+            <section id="contact" class="s-contact target-section">
+
+                <div class="row contact-top">
+                    <div class="column lg-12" data-animate-block>
+                        <h2 class="text-pretitle" data-animate-el>
+                            Contact Me
+                        </h2>
+
+                        <p class="h1" data-animate-el>
+                            I would love to hear from you. Let's connect and discuss opportunities.
+                        </p>
+                    </div>
+                </div> <!-- end contact-top -->
+
+                <div class="row contact-info wide" data-animate-block>
+                    <div class="column lg-6 md-12">
+                        <div class="contact-info__text" data-animate-el>
+                            <h2 class="text-pretitle with-line">
+                                Get in Touch
+                            </h2>
+                            <p class="attention-getter">
+                                Whether you have a project in mind, want to collaborate, or just want to say hello, I'm always open. Feel free to reach out through any of the channels below.
+                            </p>
+                            
+                            <div class="contact-details">
+                                <div class="contact-detail-item">
+                                    <h4 class="contact-detail-label">Email</h4>
+                                    <a href="mailto:julian.tanui@strathmore.edu" class="mailtoui contact-detail-value">
+                                        julian.tanui@strathmore.edu
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-detail-item">
+                                    <h4 class="contact-detail-label">Phone</h4>
+                                    <a href="tel:+254717302004" class="contact-detail-value">
+                                        +254 717 302 004
+                                    </a>
+                                </div>
+                                
+                                <div class="contact-detail-item">
+                                    <h4 class="contact-detail-label">Location</h4>
+                                    <p class="contact-detail-value">
+                                        Nairobi, Kenya
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>FoodShare</h3>
-            <p>A Web application for transparent donations, donation matching and live tracking</p>
-                        <div class="project-tech">
-                            <span>Laravel</span>
-                            <span>MySQL</span>
-                            <span>Daraja API</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card" data-category="web">
-                    <div class="project-image">
-                     <img src="images/I will do professional ai voiceover, female voiceover, text to voice, text to speech.jpeg" alt="CasaControl Project Screenshot" class="project-thumbnail">
-
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/tanuithecreator/AI-speech-to-text-converter" class="project-link"><i class="fab fa-github"></i></a>
+                    
+                    <div class="column lg-6 md-12">
+                        <div class="contact-social__text" data-animate-el>
+                            <h2 class="text-pretitle with-line">
+                                Connect With Me
+                            </h2>
+                            <p class="attention-getter">
+                                Follow my work and connect with me on these platforms.
+                            </p>
+                            
+                            <ul class="contact-social-list">
+                                <li>
+                                    <a href="https://github.com/tanuithecreator" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                                        <span class="contact-social-icon">GitHub</span>
+                                        <span class="contact-social-text">View my code and projects</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/tanui-julian-8b2341323" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                                        <span class="contact-social-icon">LinkedIn</span>
+                                        <span class="contact-social-text">Connect professionally</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://canva.com/yourprofile" target="_blank" rel="noopener noreferrer" class="contact-social-link">
+                                        <span class="contact-social-icon">Canva</span>
+                                        <span class="contact-social-text">See my design work</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                            <div class="contact-cta">
+                                <a href="mailto:julian.tanui@strathmore.edu" class="mailtoui btn btn--primary btn--medium u-fullwidth">
+                                    Send me an email
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3>AI-speech-to-text-converter</h3>
-            <p>Leveraging Artificial Intelligence to take in voice output and respond in text</p>
-                        <div class="project-tech">
-                            <span>JavaScript</span>
-                            <span>Node.js</span>
-                            <span>Python</span>
-                        </div>
-                    </div>
-                </div>
+                </div> 
+                <!-- end contact-content -->
 
-                <div class="project-card" data-category="design">
-                    <div class="project-image">
-                 <img src="images/esta listo 🗿.jpeg" alt="CasaControl Project Screenshot" class="project-thumbnail">
+            </section> <!-- end contact -->
 
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://gamingragassistant-xlr8.streamlit.app/" class="project-link"><i class="fas fa-external-link-alt"></i></a>
-                                <a href="https://github.com/tanuithecreator/GameRAGassistant.git" class="project-link"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Gaming Chatbot</h3>
-                        <p>Complete RAG based chatbot to help with your gaming queries</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Langchain</span>
-                            <span>Markdown</span>
-                        </div>
-                    </div>
+        </main> <!-- end s-content -->
+        
+
+
+                       <!-- footer -->
+        <footer class="s-footer">
+
+            <div class="row">
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top" aria-label="Back to top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Collaborate</h3>
-                    <p>I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
+        </footer> <!-- end s-footer -->
 
-                            <i class="fas fa-envelope"></i>
-                            <span>julian.tanui@strathmore.edu</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-phone"></i>
-                            <span>+254717302004</span>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
+    </div> <!-- end -s-pagewrap -->
 
-                            <span>Nairobi,Kenya</span>
-                        </div>
-                    </div>
 
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/instanuii/" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/tanuithecreator" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                         <a href="https://www.linkedin.com/in/tanui-julian-8b2341323" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
+    <!-- Java Script -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Julian Tanui. All rights reserved.</p>
-            
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
