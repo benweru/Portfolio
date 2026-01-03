@@ -40,7 +40,7 @@
         opacity: [0, 1]
     }, '-=200')
     .add({
-        targets: [ '.s-intro .text-pretitle', '.s-intro .text-huge-title'],
+        targets: [ '.s-intro .text-pretitle'], // Removed .text-huge-title to avoid conflict with typewriter
         translateX: [100, 0],
         opacity: [0, 1],
         delay: anime.stagger(400)
@@ -195,10 +195,10 @@
                     anime({
                         targets: current.querySelectorAll("[data-animate-el]"),
                         opacity: [0, 1],
-                        translateY: [100, 0],
-                        delay: anime.stagger(400, {start: 200}),
-                        duration: 800,
-                        easing: 'easeInOutCubic',
+                        translateY: [50, 0], // Reduced movement for subtlety
+                        delay: anime.stagger(200, {start: 100}), // Faster stagger
+                        duration: 1200, // Slower duration for elegance
+                        easing: 'easeOutCubic', // Softer ease out
                         begin: function(anim) {
                             current.classList.add("ss-animated");
                         }

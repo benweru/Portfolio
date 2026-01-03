@@ -25,9 +25,12 @@
     </div>
 
     <div class="s-pagewrap">
-      <div class="circles">
+
+      <!-- <div class="circles">
         <span></span><span></span><span></span><span></span><span></span>
-      </div>
+      </div> -->
+      <canvas id="bg-canvas"></canvas>
+
 
       <header class="s-header">
         <div class="header-mobile">
@@ -137,13 +140,16 @@
           <div class="row about-expertise" data-animate-block>
             <div class="column lg-12">
               <h2 class="text-pretitle" data-animate-el>Expertise</h2>
-              <ul class="skills-list h1" data-animate-el>
-                <li>Data Analytics & Presentation</li>
-                <li>Networks and Networking</li>
-                <li>Web & Mobile App Development</li>
-                <li>Machine Learning & AI</li>
-                <li>Server Administration</li>
-                <li>Cloud Architecture</li>
+              <ul class="skills-grid" data-animate-el>
+                <li class="skill-badge"><strong>Python</strong> (Pandas, NumPy, Scikit-learn)</li>
+                <li class="skill-badge"><strong>Machine Learning</strong> (TensorFlow)</li>
+                <li class="skill-badge"><strong>Flutter</strong> (Dart)</li>
+                <li class="skill-badge"><strong>React</strong> (JS/TS)</li>
+                <li class="skill-badge"><strong>SQL</strong> (PostgreSQL, MySQL)</li>
+                <li class="skill-badge"><strong>Git</strong> & <strong>GitHub</strong></li>
+                <li class="skill-badge"><strong>HTML5</strong> & <strong>CSS3</strong></li>
+                <li class="skill-badge">Server Administration</li>
+                <li class="skill-badge">Cloud Architecture</li>
               </ul>
             </div>
           </div>
@@ -242,6 +248,23 @@
 
               <ul class="folio-list row block-lg-one-half block-stack-on-1000">
                 <li class="folio-list__item column" data-animate-el>
+                  <a class="folio-list__item-link" href="#modal-04">
+                    <div class="folio-list__item-pic">
+                      <img
+                        src="assets/images/kedong-farm-tracker.png"
+                        alt="Kedong Farm Expense Tracker"
+                      />
+                    </div>
+                    <div class="folio-list__item-text">
+                      <div class="folio-list__item-cat">Full-Stack Development</div>
+                      <div class="folio-list__item-title">
+                        Kedong Farm Tracker
+                      </div>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="folio-list__item column" data-animate-el>
                   <a class="folio-list__item-link" href="#modal-01">
                     <div class="folio-list__item-pic">
                       <img
@@ -295,6 +318,34 @@
             </div>
           </div>
 
+          <div id="modal-04" hidden>
+            <div class="modal-popup">
+              <div class="modal-popup__desc">
+                <h5>Kedong Farm Expense Tracker</h5>
+                <p>
+                  A full-stack expense management application built for agricultural operations.
+                  Features include expense recording across 8 farm categories, lot-based tracking for granular cost analysis,
+                  and real-time dashboard analytics with customizable date ranges.
+                  Secure authentication via Supabase and a mobile-first design optimized for field use.
+                </p>
+                <ul class="modal-popup__cat">
+                  <li>React</li>
+                  <li>TypeScript</li>
+                  <li>Tailwind CSS</li>
+                  <li>Supabase</li>
+                </ul>
+              </div>
+              <div class="modal-popup__links">
+                <a
+                  href="https://kedong-farm-log.lovable.app/"
+                  target="_blank"
+                  class="btn btn--primary btn--medium"
+                  >View Live App</a
+                >
+              </div>
+            </div>
+          </div>
+
           <div id="modal-01" hidden>
             <div class="modal-popup">
               <div class="modal-popup__desc">
@@ -344,7 +395,7 @@
               <div class="modal-popup__links">
                 <!-- <a href="#0" class="btn btn--primary btn--medium"
                   >View Case Study</a -->
-                >
+              
               </div>
             </div>
           </div>
@@ -473,5 +524,8 @@
 
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/tilt.js"></script> <!-- Pre-adding tilt for next step -->
   </body>
 </html>

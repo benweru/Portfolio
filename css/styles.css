@@ -511,14 +511,16 @@ body {
   height: 100%;
 }
 
+
 body {
-  background-color: var(--color-body);
+  background-color: transparent;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 p {
   font-size: inherit;
@@ -2636,6 +2638,111 @@ td:last-child {
 }
 
 /* ------------------------------------------------------------------- 
+ * ## Glassmorphism Utility
+ * ------------------------------------------------------------------- */
+.glass-panel,
+.about-info__text,
+.contact-info__text,
+.folio-list__item-link, 
+.header-mobile {
+  background: rgba(20, 21, 22, 0.6) !important; /* Semi-transparent body color */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+}
+
+.s-header {
+    background: transparent; /* Allow glass to show on mobile header or if applied */
+}
+
+.folio-list__item-link {
+    display: block;
+    padding: var(--vspace-0_5); /* Add spacing inside the glass card */
+    transition: transform 0.1s ease-out, box-shadow 0.3s, border-color 0.3s; /* Fast transform for tilt */
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden; /* For glow shine */
+}
+
+.folio-list__item-link:hover {
+    border-color: var(--color-1);
+    box-shadow: 0 0 20px rgba(234, 190, 124, 0.3), 0 0 40px rgba(35, 150, 127, 0.1);
+}
+
+.folio-list__item-link::after {
+    /* Shine effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.folio-list__item-link:hover::after {
+    left: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+/* Cursor Blink for Typewriter */
+.cursor-blink {
+    color: var(--color-1);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Skills Grid
+ * ------------------------------------------------------------------- */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    list-style: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.skill-badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 0.8rem 1.6rem;
+    font-size: 1.4rem;
+    color: var(--color-gray-1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(234, 190, 124, 0.2);
+    color: var(--color-white);
+}
+
+.skill-badge strong {
+    color: var(--color-1);
+}
+
+/* ------------------------------------------------------------------- 
  * ## media classes
  * ------------------------------------------------------------------- */
 
@@ -2871,12 +2978,27 @@ img.u-pull-left {
   min-height: 100%;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 /* --------------------------------------------------------------------
  * ## circles
  * -------------------------------------------------------------------- */
-.s-pagewrap .circles,
+
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--color-body);
+}
+
+/* --------------------------------------------------------------------
+ * ## circles (Legacy - Replaced by Canvas)
+ * -------------------------------------------------------------------- */
+/*.s-pagewrap .circles,
 .s-pagewrap .circles span {
   position: absolute;
 }
@@ -2896,7 +3018,8 @@ img.u-pull-left {
   transform: translate(-50%, -50%);
   left: 50%;
   top: 50%;
-}
+}*/
+
 
 .s-pagewrap .circles span:nth-child(1) {
   height: 100%;
@@ -3808,64 +3931,80 @@ img.u-pull-left {
  * ## modal popup
  * ------------------------------------------------------------------- */
 .modal-popup {
-  max-width: 800px;
-  background-color: white;
-  font-size: calc(var(--text-size) * 0.9447);
-  line-height: var(--vspace-0_875);
-  color: rgba(0, 0, 0, 0.75);
+  max-width: 680px;
+  background: rgba(20, 21, 22, 0.85); /* Glass Background */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  font-size: var(--text-md);
+  line-height: var(--vspace-1);
+  color: var(--color-gray-1);
+  padding: 0;
+  border-radius: var(--border-radius);
   overflow-y: auto;
   position: relative;
   max-height: 90vh;
+  /* Entry Animation */
+  animation: modalFadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes modalFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .modal-popup h5 {
   font-family: var(--font-1);
-  font-size: var(--text-size);
+  font-size: var(--text-lg);
   line-height: var(--vspace-1);
   font-weight: 500;
   margin-top: 0;
   margin-bottom: var(--vspace-0_25);
-  color: black;
+  color: var(--color-1); /* Highlight title */
 }
 
 .modal-popup__desc {
-  padding: var(--vspace-2) var(--vspace-1_5) var(--vspace-1);
+  padding: var(--vspace-1_5) var(--vspace-2);
 }
 
 .modal-popup__cat {
+  padding-left: 0;
   list-style: none;
+  font-family: var(--font-1);
+  font-weight: 500;
+  font-size: var(--text-xs);
+  line-height: var(--vspace-1);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-white);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--vspace-1);
+  margin-top: var(--vspace-1);
   margin-left: 0;
-  font-size: var(--text-sm);
-  line-height: var(--vspace-0_5);
-  color: rgba(0, 0, 0, 0.6);
-  padding-left: calc(0.875 * var(--space));
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+/* Removed before icon for cleaner look, or keep if desired. Removing for now to align with badges. */
 .modal-popup__cat::before {
-  content: "";
-  display: block;
-  height: calc(0.625 * var(--space));
-  width: calc(0.625 * var(--space));
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-image: url(../images/icons/icon-tag.svg);
-  position: absolute;
-  left: 0;
-  top: -0.15em;
+  display: none;
 }
 
 .modal-popup__cat li {
-  display: inline;
-  padding-left: 0;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 .modal-popup__cat li::after {
-  content: ", ";
-}
-
-.modal-popup__cat li:last-child::after {
   display: none;
 }
 
