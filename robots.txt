@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://benweru.github.io/Portfolio/sitemap.xml
+Sitemap: https://benweru.github.io/sitemap.xml
