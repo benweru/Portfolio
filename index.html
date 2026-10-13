@@ -1,47 +1,103 @@
 <!DOCTYPE html>
-<html class="no-js ss-preload" lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Ben Waweru Maina | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ben Waweru Maina — Junior Full-Stack &amp; AI Engineer, Nairobi</title>
     <meta
       name="description"
-      content="Portfolio of Ben Waweru Maina - Informatics and Computer Science Student"
+      content="Ben Waweru Maina is a junior full-stack and AI engineer in Nairobi. Strathmore BSc Informatics & Computer Science graduate with internship experience in Ruby on Rails, Docker and AI automation."
     />
     <meta name="author" content="Ben Waweru Maina" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141516" />
+    <link rel="canonical" href="https://benweru.github.io/Portfolio/" />
 
-    <link rel="stylesheet" href="css/vendor.css" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Ben Waweru Maina" />
+    <meta property="og:title" content="Ben Waweru Maina — Junior Full-Stack & AI Engineer" />
+    <meta
+      property="og:description"
+      content="Strathmore Informatics & Computer Science graduate. Ruby on Rails, Python, Docker and LLMs. Open to junior software engineering roles in Nairobi or remote."
+    />
+    <meta property="og:url" content="https://benweru.github.io/Portfolio/" />
+    <meta property="og:image" content="https://benweru.github.io/Portfolio/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ben Waweru Maina — Junior Full-Stack & AI Engineer" />
+    <meta property="profile:first_name" content="Ben" />
+    <meta property="profile:last_name" content="Maina" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ben Waweru Maina — Junior Full-Stack & AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="Strathmore Informatics & Computer Science graduate. Ruby on Rails, Python, Docker and LLMs. Open to junior roles."
+    />
+    <meta name="twitter:image" content="https://benweru.github.io/Portfolio/assets/images/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ben Waweru Maina",
+        "jobTitle": "Junior Full-Stack & AI Engineer",
+        "url": "https://benweru.github.io/Portfolio/",
+        "image": "https://benweru.github.io/Portfolio/assets/images/og-image.jpg",
+        "email": "mailto:benweru.cs@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Nairobi",
+          "addressCountry": "KE"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Strathmore University"
+        },
+        "knowsAbout": [
+          "Ruby on Rails",
+          "Python",
+          "Docker",
+          "Machine Learning",
+          "Large Language Models",
+          "PostgreSQL",
+          "React",
+          "Flutter"
+        ],
+        "sameAs": [
+          "https://github.com/benweru",
+          "https://www.linkedin.com/in/ben-maina-632aa8297"
+        ]
+      }
+    </script>
+
+    <script>
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");
+    </script>
+
+    <link rel="preload" href="assets/fonts/public-sans-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/dm-serif-display-latin-400.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/styles.css" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" href="favicon.ico" sizes="48x48" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="manifest" href="site.webmanifest" />
   </head>
 
   <body id="top">
-    <div id="preloader">
-      <div id="loader"></div>
-    </div>
-
     <div class="s-pagewrap">
-
-      <!-- <div class="circles">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div> -->
-      <canvas id="bg-canvas"></canvas>
-
+      <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
       <header class="s-header">
         <div class="header-mobile">
-          <span class="mobile-home-link"><a href="index.html">Ben.</a></span>
-          <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+          <span class="mobile-home-link"><a href="./">Ben.</a></span>
+          <a class="mobile-menu-toggle" href="#0" aria-label="Toggle menu"><span>Menu</span></a>
         </div>
 
         <div class="row wide main-nav-wrap">
-          <nav class="column lg-12 main-nav">
+          <nav class="column lg-12 main-nav" aria-label="Main">
             <ul>
-              <li><a href="index.html" class="home-link">Benweru</a></li>
+              <li><a href="./" class="home-link">Benweru</a></li>
               <li class="current">
                 <a href="#intro" class="smoothscroll">Intro</a>
               </li>
@@ -58,23 +114,30 @@
         <section id="intro" class="s-intro target-section">
           <div class="row intro-content wide">
             <div class="column">
-              <div class="text-pretitle with-line">WELCOME</div>
+              <p class="intro-availability">Open to junior roles · Nairobi / Remote</p>
               <h1 class="text-huge-title">
-                I am Ben Waweru Maina, <br />
-                an Informatics & <br />
-                Computer Science professional <br />
-                specializing in Data Analytics, Cloud Infrastructure, <br />
-                and AI&ML Engineering.
+                I'm Ben Waweru Maina, a junior full-stack &amp; AI engineer.
               </h1>
+              <p class="intro-lead">
+                Informatics &amp; Computer Science graduate from Strathmore
+                University. At Kwara I prototyped AI solutions, automated
+                backend workflows and built full-stack features with Ruby on
+                Rails and Docker.
+              </p>
+              <div class="intro-actions">
+                <a href="#works" class="btn btn--primary btn--medium smoothscroll">View projects</a>
+                <a href="assets/cv/Ben_Maina_Resume.pdf" class="btn btn--stroke btn--medium" download>Download CV</a>
+              </div>
             </div>
           </div>
-          <a href="#about" class="intro-scrolldown smoothscroll">
+          <a href="#download-cv" class="intro-scrolldown smoothscroll" aria-label="Scroll to the CV section">
             <svg
               width="24"
               height="24"
               viewBox="0 0 24 24"
               fill-rule="evenodd"
               clip-rule="evenodd"
+              aria-hidden="true"
             >
               <path
                 d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"
@@ -116,8 +179,14 @@
           <div class="row about-info wide" data-animate-block>
             <div class="column lg-6 md-12 about-info__pic-block">
               <img
-                src="assets/images/BenMaina_Passport.jpeg"
-                alt="Ben Maina"
+                src="assets/images/ben-maina-1000.webp"
+                srcset="assets/images/ben-maina-600.webp 600w, assets/images/ben-maina-1000.webp 1000w"
+                sizes="(max-width: 1000px) 100vw, 50vw"
+                width="1000"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                alt="Portrait of Ben Maina"
                 class="about-info__pic"
                 data-animate-el
               />
@@ -126,11 +195,14 @@
               <div class="about-info__text">
                 <h2 class="text-pretitle with-line" data-animate-el>About</h2>
                 <p class="attention-getter" data-animate-el>
-                  I am an Informatics and Computer Science graduate with a focus
-                  on building secure, efficient, and intelligent systems. My
-                  expertise spans Web/Mobile Development, Cloud infrastructure, Database Management and Data Science. I am driven by
-                  solving problems using technology, as well as the challenge of
-                  securing modern digital infrastructures. I am currently expanding my backend and automation expertise into AI and Machine Learning Engineering.
+                  I'm an Informatics and Computer Science graduate from
+                  Strathmore University (2026), looking for a junior software
+                  engineering role. During my internship at Kwara I prototyped
+                  AI solutions, automated repetitive backend tasks and built
+                  full-stack features with Ruby on Rails and Docker. I enjoy
+                  building secure, efficient systems across web, mobile,
+                  databases and the cloud, and I'm growing my skills in AI and
+                  machine learning engineering.
                 </p>
               </div>
             </div>
@@ -140,14 +212,15 @@
             <div class="column lg-12">
               <h2 class="text-pretitle" data-animate-el>Expertise</h2>
               <ul class="skills-grid" data-animate-el>
+                <li class="skill-badge"><strong>Backend Development</strong> (Ruby on Rails, Flask, FastAPI, Docker)</li>
                 <li class="skill-badge"><strong>Data Science and Analytics</strong> (Pandas, NumPy, Scikit-learn)</li>
-                <li class="skill-badge"><strong>Machine Learning & AI Workflows</strong></li>
-                <li class="skill-badge"><strong>Mobile App Development</strong>(React&ReactNative, Flutter) </li>
-                <li class="skill-badge"><strong>Web Development</strong> </li>
+                <li class="skill-badge"><strong>Machine Learning &amp; AI Workflows</strong></li>
+                <li class="skill-badge"><strong>Web Development</strong> (React, Next.js, TypeScript)</li>
+                <li class="skill-badge"><strong>Mobile App Development</strong> (React Native, Flutter)</li>
                 <li class="skill-badge"><strong>Database Management</strong> (PostgreSQL, MySQL, NoSQL)</li>
                 <li class="skill-badge"><strong>Server Administration</strong></li>
                 <li class="skill-badge"><strong>Cloud Architecture</strong></li>
-                <li class="skill-badge"><strong>Networking & Network Security</strong></li>
+                <li class="skill-badge"><strong>Networking &amp; Network Security</strong></li>
               </ul>
             </div>
           </div>
@@ -159,19 +232,19 @@
                 <div class="timeline__block">
                   <div class="timeline__bullet"></div>
                   <div class="timeline__header">
-                    <h4 class="timeline__title">Kwara</h4>
-                    <h5 class="timeline__meta">Full Stack Developer & AI Automation Engineer</h5>
-                    <p class="timeline__timeframe">2026 - Present</p>
+                    <h3 class="timeline__title">Kwara</h3>
+                    <p class="timeline__meta">Full-Stack &amp; AI Automation Intern</p>
+                    <p class="timeline__timeframe">2026 – Sep 2026</p>
                   </div>
                   <div class="timeline__desc">
                     <p>
-                      Designing and implementing automated AI and Machine Learning workflows, prototyping solutions to optimize internal backend data manipulation and automate repetitive tasks.
+                      • Prototyped AI and machine learning solutions for
+                      internal workflows.
                       <br />
-                      • Collaborated with cross-functional teammates to triage
-                      issues and implement UI & backend improvements.
+                      • Automated repetitive backend data-handling tasks.
                       <br />
-                      • Built and maintained concise documentation for
-                      troubleshooting steps and deployment flows.
+                      • Built full-stack features with Ruby on Rails and
+                      Docker.
                     </p>
                   </div>
                 </div>
@@ -179,9 +252,9 @@
                 <div class="timeline__block">
                   <div class="timeline__bullet"></div>
                   <div class="timeline__header">
-                    <h4 class="timeline__title">Chumz by Moneto</h4>
-                    <h5 class="timeline__meta">Attachment</h5>
-                    <p class="timeline__timeframe">Feb 2025 - March 2025</p>
+                    <h3 class="timeline__title">Chumz by Moneto</h3>
+                    <p class="timeline__meta">Attachment</p>
+                    <p class="timeline__timeframe">Feb 2025 – Mar 2025</p>
                   </div>
                   <div class="timeline__desc">
                     <p>
@@ -205,15 +278,15 @@
                 <div class="timeline__block">
                   <div class="timeline__bullet"></div>
                   <div class="timeline__header">
-                    <h4 class="timeline__title">Strathmore University</h4>
-                    <h5 class="timeline__meta">
+                    <h3 class="timeline__title">Strathmore University</h3>
+                    <p class="timeline__meta">
                       BSc. Informatics and Computer Science
-                    </h5>
+                    </p>
                     <p class="timeline__timeframe">2026</p>
                   </div>
                   <div class="timeline__desc">
                     <p>
-                      Coursework in AI, Database Management, Cybersecurity, and
+                      Coursework in AI, Database Management, Cybersecurity,
                       Software Development, Server Administration and
                       Networking.
                     </p>
@@ -223,26 +296,14 @@
                 <div class="timeline__block">
                   <div class="timeline__bullet"></div>
                   <div class="timeline__header">
-                    <h4 class="timeline__title">Strathmore University</h4>
-                    <h5 class="timeline__meta">Certification: Data Science</h5>
+                    <h3 class="timeline__title">Strathmore University</h3>
+                    <p class="timeline__meta">Certification: Data Science</p>
                     <p class="timeline__timeframe">2022</p>
                   </div>
                   <div class="timeline__desc">
                     <p>
                       Focused on data scraping, analytics, and presentation
                       using Python.
-                    </p>
-                  </div>
-                </div>
-
-                <div class="timeline__block">
-                  <div class="timeline__bullet"></div>
-                  <div class="timeline__header">
-                    <h4 class="timeline__title">Light Academy, Nairobi</h4>
-                    <h5 class="timeline__meta">KCSE (Grade: B+)</h5>
-                  </div>
-                  <div class="timeline__desc">
-                    <p>
                     </p>
                   </div>
                 </div>
@@ -265,12 +326,18 @@
                   <a class="folio-list__item-link" href="#modal-05">
                     <div class="folio-list__item-pic">
                       <img
-                        src="assets/images/custom-rdbms.png"
+                        src="assets/images/custom-rdbms-160.webp"
+                        srcset="assets/images/custom-rdbms-160.webp 160w, assets/images/custom-rdbms-320.webp 320w, assets/images/custom-rdbms-720.webp 720w"
+                        sizes="(max-width: 400px) 92vw, 160px"
+                        width="160"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
                         alt="Custom RDBMS"
                       />
                     </div>
                     <div class="folio-list__item-text">
-                      <div class="folio-list__item-cat">System Design & Databases</div>
+                      <div class="folio-list__item-cat">System Design &amp; Databases</div>
                       <div class="folio-list__item-title">
                         Custom RDBMS
                       </div>
@@ -282,7 +349,13 @@
                   <a class="folio-list__item-link" href="#modal-04">
                     <div class="folio-list__item-pic">
                       <img
-                        src="assets/images/kedong-farm-tracker.png"
+                        src="assets/images/kedong-farm-tracker-160.webp"
+                        srcset="assets/images/kedong-farm-tracker-160.webp 160w, assets/images/kedong-farm-tracker-320.webp 320w, assets/images/kedong-farm-tracker-720.webp 720w"
+                        sizes="(max-width: 400px) 92vw, 160px"
+                        width="160"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
                         alt="Kedong Farm Expense Tracker"
                       />
                     </div>
@@ -299,7 +372,13 @@
                   <a class="folio-list__item-link" href="#modal-01">
                     <div class="folio-list__item-pic">
                       <img
-                        src="assets/images/travel-planner.png"
+                        src="assets/images/travel-planner-160.webp"
+                        srcset="assets/images/travel-planner-160.webp 160w, assets/images/travel-planner-320.webp 320w, assets/images/travel-planner-720.webp 720w"
+                        sizes="(max-width: 400px) 92vw, 160px"
+                        width="160"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
                         alt="AI Travel Planner"
                       />
                     </div>
@@ -316,7 +395,13 @@
                   <a class="folio-list__item-link" href="#modal-02">
                     <div class="folio-list__item-pic">
                       <img
-                        src="assets/images/hotel-prediction.jpg"
+                        src="assets/images/hotel-prediction-160.webp"
+                        srcset="assets/images/hotel-prediction-160.webp 160w, assets/images/hotel-prediction-320.webp 320w, assets/images/hotel-prediction-720.webp 504w"
+                        sizes="(max-width: 400px) 92vw, 160px"
+                        width="160"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
                         alt="Hotel Price Prediction"
                       />
                     </div>
@@ -333,7 +418,13 @@
                   <a class="folio-list__item-link" href="#modal-03">
                     <div class="folio-list__item-pic">
                       <img
-                        src="assets/images/strathmover.jpg"
+                        src="assets/images/strathmover-160.webp"
+                        srcset="assets/images/strathmover-160.webp 160w, assets/images/strathmover-320.webp 320w, assets/images/strathmover-720.webp 720w"
+                        sizes="(max-width: 400px) 92vw, 160px"
+                        width="160"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
                         alt="Strathmover App"
                       />
                     </div>
@@ -349,13 +440,14 @@
             </div>
           </div>
 
-          <div id="modal-05" hidden>
+          <dialog id="modal-05" class="project-dialog" aria-labelledby="modal-05-title">
             <div class="modal-popup">
+              <button type="button" class="project-dialog__close" aria-label="Close"></button>
               <div class="modal-popup__desc">
-                <h5>Custom RDBMS (PesaPal Challenge '26)</h5>
+                <h3 id="modal-05-title">Custom RDBMS (PesaPal Challenge '26)</h3>
                 <p>
-                  A custom Relational Database Management System built from scratch to solve the PesaPal Junior Dev Challenge. 
-                  Implements core database fundamentals including a custom file-based storage engine, a Regex-based SQL parser, 
+                  A custom Relational Database Management System built from scratch to solve the PesaPal Junior Dev Challenge.
+                  Implements core database fundamentals including a custom file-based storage engine, a Regex-based SQL parser,
                   O(1) Primary Key indexing, and relational joins. Features a dynamic Flask web dashboard for visual CRUD operations.
                 </p>
                 <ul class="modal-popup__cat">
@@ -366,15 +458,22 @@
                 </ul>
               </div>
               <div class="modal-popup__links">
-                <a href="https://github.com/benweru/pesapal-jdev26-rdbms" class="btn btn--primary btn--medium">View Repo</a>
+                <a
+                  href="https://github.com/benweru/pesapal-jdev26-rdbms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--primary btn--medium"
+                  >View Repo</a
+                >
               </div>
             </div>
-          </div>
+          </dialog>
 
-          <div id="modal-04" hidden>
+          <dialog id="modal-04" class="project-dialog" aria-labelledby="modal-04-title">
             <div class="modal-popup">
+              <button type="button" class="project-dialog__close" aria-label="Close"></button>
               <div class="modal-popup__desc">
-                <h5>Farm Expense Tracker</h5>
+                <h3 id="modal-04-title">Farm Expense Tracker</h3>
                 <p>
                   A full-stack expense management application built for agricultural operations.
                   Features include expense recording across 8 farm categories, lot-based tracking for granular cost analysis,
@@ -389,17 +488,18 @@
                 </ul>
               </div>
               <div class="modal-popup__links">
-                <a target="_blank"
-                  class="btn btn--primary btn--medium"
-                > Link not provided(customer privacy)</a>
+                <p class="modal-popup__note">
+                  Built for a private client, so the code and live app aren't public.
+                </p>
               </div>
             </div>
-          </div>
+          </dialog>
 
-          <div id="modal-01" hidden>
+          <dialog id="modal-01" class="project-dialog" aria-labelledby="modal-01-title">
             <div class="modal-popup">
+              <button type="button" class="project-dialog__close" aria-label="Close"></button>
               <div class="modal-popup__desc">
-                <h5>AI Travel Itinerary Planner (Capstone Project)</h5>
+                <h3 id="modal-01-title">AI Travel Itinerary Planner (Capstone Project)</h3>
                 <p>
                   A personalized travel itinerary generation system leveraging
                   in-context learning and supervised fine-tuning of lightweight
@@ -418,22 +518,24 @@
                 <a
                   href="https://github.com/is-project-4th-year/FINE-TUNED-TRAVEL-ITINERARY-GENERATOR"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn--primary btn--medium"
                   >View Repo</a
                 >
               </div>
             </div>
-          </div>
+          </dialog>
 
-          <div id="modal-02" hidden>
+          <dialog id="modal-02" class="project-dialog" aria-labelledby="modal-02-title">
             <div class="modal-popup">
+              <button type="button" class="project-dialog__close" aria-label="Close"></button>
               <div class="modal-popup__desc">
-                <h5>Hotel Price Prediction System</h5>
+                <h3 id="modal-02-title">Hotel Price Prediction System</h3>
                 <p>
                   Developed a machine learning model to predict prices based on
-                  location and day of the week.Analyzed variability using OLS,
-                  Lasso, and Ridge regressions, achieving an $R^2$ value of
-                  0.519.
+                  location and day of the week. Analyzed variability using OLS,
+                  Lasso, and Ridge regressions; the best model explains about
+                  half of the variance in price (R² = 0.519).
                 </p>
                 <ul class="modal-popup__cat">
                   <li>Data Science</li>
@@ -442,21 +544,17 @@
                   <li>EDA</li>
                 </ul>
               </div>
-              <div class="modal-popup__links">
-                <!-- <a href="#0" class="btn btn--primary btn--medium"
-                  >View Case Study</a -->
-              
-              </div>
             </div>
-          </div>
+          </dialog>
 
-          <div id="modal-03" hidden>
+          <dialog id="modal-03" class="project-dialog" aria-labelledby="modal-03-title">
             <div class="modal-popup">
+              <button type="button" class="project-dialog__close" aria-label="Close"></button>
               <div class="modal-popup__desc">
-                <h5>Strathmover Bus Seat Booking App</h5>
+                <h3 id="modal-03-title">Strathmover Bus Seat Booking App</h3>
                 <p>
                   A cross-platform mobile application built with Flutter and
-                  Firebase.Enables students and staff to register, browse trips,
+                  Firebase. Enables students and staff to register, browse trips,
                   select seats, and manage trip history with real-time updates.
                 </p>
                 <ul class="modal-popup__cat">
@@ -469,12 +567,13 @@
                 <a
                   href="https://github.com/benweru/Strathmover"
                   target="_blank"
+                  rel="noopener noreferrer"
                   class="btn btn--primary btn--medium"
                   >View Repo</a
                 >
               </div>
             </div>
-          </div>
+          </dialog>
         </section>
 
         <section id="contact" class="s-contact target-section">
@@ -492,13 +591,13 @@
               <div class="contact-info__text" data-animate-el>
                 <h2 class="text-pretitle with-line">Get in Touch</h2>
                 <p class="attention-getter">
-                  Whether you have a project in mind, want to collaborate, or
-                  are recruiting, feel free to reach out through any of
-                  the channels below.
+                  I'm open to junior software engineering roles. Whether you're
+                  recruiting, have a project in mind or want to collaborate,
+                  feel free to reach out through any of the channels below.
                 </p>
                 <div class="contact-details">
                   <div class="contact-detail-item">
-                    <h4 class="contact-detail-label">Email</h4>
+                    <h3 class="contact-detail-label">Email</h3>
                     <a
                       href="mailto:benweru.cs@gmail.com"
                       class="contact-detail-value"
@@ -506,7 +605,7 @@
                     >
                   </div>
                   <div class="contact-detail-item">
-                    <h4 class="contact-detail-label">Location</h4>
+                    <h3 class="contact-detail-label">Location</h3>
                     <p class="contact-detail-value">Nairobi, Kenya</p>
                   </div>
                 </div>
@@ -560,8 +659,8 @@
       <footer class="s-footer">
         <div class="row">
           <div class="ss-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top">
-              <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+            <a class="smoothscroll" title="Back to Top" aria-label="Back to top" href="#top">
+              <svg width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"
                 />
@@ -572,10 +671,8 @@
       </footer>
     </div>
 
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/background.js"></script>
-    <script src="js/typewriter.js"></script>
-    <script src="js/tilt.js"></script> <!-- Pre-adding tilt for next step -->
+    <script src="js/main.js" defer></script>
+    <script src="js/background.js" defer></script>
+    <script src="js/tilt.js" defer></script>
   </body>
 </html>
