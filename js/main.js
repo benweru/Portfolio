@@ -1,100 +1,17 @@
 /* ===================================================================
- * Luther 1.0.0 - Main JS
+ * Main JS
  *
  * ------------------------------------------------------------------- */
 
-(function(html) {
+(function() {
 
     "use strict";
 
-    html.className = html.className.replace(/\bno-js\b/g, '') + ' js ';
-
-
-
-   /* Animations
-    * -------------------------------------------------- */
-    const tl = anime.timeline( {
-        easing: 'easeInOutCubic',
-        duration: 800,
-        autoplay: false
-    })
-    .add({
-        targets: '#loader',
-        opacity: 0,
-        duration: 1000,
-        begin: function(anim) {
-            window.scrollTo(0, 0);
-        }
-    })
-    .add({
-        targets: '#preloader',
-        opacity: 0,
-        complete: function(anim) {
-            document.querySelector("#preloader").style.visibility = "hidden";
-            document.querySelector("#preloader").style.display = "none";
-        }
-    })
-    .add({
-        targets: '.s-header',
-        translateY: [-100, 0],
-        opacity: [0, 1]
-    }, '-=200')
-    .add({
-        targets: [ '.s-intro .text-pretitle'], // Removed .text-huge-title to avoid conflict with typewriter
-        translateX: [100, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(400)
-    })
-    .add({
-        targets: '.circles span',
-        keyframes: [
-            {opacity: [0, .3]},
-            {opacity: [.3, .1], delay: anime.stagger(100, {direction: 'reverse'})}
-        ],
-        delay: anime.stagger(100, {direction: 'reverse'})
-    })
-    .add({
-        targets: '.intro-social li',
-        translateX: [-50, 0],
-        opacity: [0, 1],
-        delay: anime.stagger(100, {direction: 'reverse'})
-    })
-    .add({
-        targets: '.intro-scrolldown',
-        translateY: [100, 0],
-        opacity: [0, 1]
-    }, '-=800');
-
-
-
-   /* Preloader
-    * -------------------------------------------------- */
-    const ssPreloader = function() {
-
-        const preloader = document.querySelector('#preloader');
-        if (!preloader) return;
-        
-        window.addEventListener('load', function() {
-            document.querySelector('html').classList.remove('ss-preload');
-            document.querySelector('html').classList.add('ss-loaded');
-
-            document.querySelectorAll('.ss-animated').forEach(function(item){
-                item.classList.remove('ss-animated');
-            });
-
-            tl.play();
-        });
-
-        // force page scroll position to top at page refresh
-        // window.addEventListener('beforeunload' , function () {
-        //     // window.scrollTo(0, 0);
-        // });
-
-    }; // end ssPreloader
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 
    /* Mobile Menu
-    * ---------------------------------------------------- */ 
+    * ---------------------------------------------------- */
     const ssMobileMenu = function() {
 
         const toggleButton = document.querySelector('.mobile-menu-toggle');
@@ -110,7 +27,7 @@
         });
 
         mainNavWrap.querySelectorAll('.main-nav a').forEach(function(link) {
-            link.addEventListener("click", function(event) {
+            link.addEventListener("click", function() {
 
                 // at 800px and below
                 if (window.matchMedia('(max-width: 800px)').matches) {
@@ -138,31 +55,23 @@
 
         const sections = document.querySelectorAll(".target-section");
 
-        // Add an event listener listening for scroll
-        window.addEventListener("scroll", navHighlight);
+        window.addEventListener("scroll", navHighlight, { passive: true });
 
         function navHighlight() {
-        
-            // Get current scroll position
-            let scrollY = window.pageYOffset;
-        
-            // Loop through sections to get height(including padding and border), 
-            // top and ID values for each
+
+            const scrollY = window.pageYOffset;
+
             sections.forEach(function(current) {
                 const sectionHeight = current.offsetHeight;
                 const sectionTop = current.offsetTop - 50;
                 const sectionId = current.getAttribute("id");
-            
-               /* If our current scroll position enters the space where current section 
-                * on screen is, add .current class to parent element(li) of the thecorresponding 
-                * navigation link, else remove it. To know which link is active, we use 
-                * sectionId variable we are getting while looping through sections as 
-                * an selector
-                */
+                const link = document.querySelector(".main-nav a[href*=" + sectionId + "]");
+                if (!link) return;
+
                 if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                    document.querySelector(".main-nav a[href*=" + sectionId + "]").parentNode.classList.add("current");
+                    link.parentNode.classList.add("current");
                 } else {
-                    document.querySelector(".main-nav a[href*=" + sectionId + "]").parentNode.classList.remove("current");
+                    link.parentNode.classList.remove("current");
                 }
             });
         }
@@ -170,221 +79,76 @@
     }; // end ssScrollSpy
 
 
-   /* Animate elements if in viewport
+   /* Reveal blocks when they enter the viewport
     * ------------------------------------------------------ */
     const ssViewAnimate = function() {
 
         const blocks = document.querySelectorAll("[data-animate-block]");
 
-        window.addEventListener("scroll", viewportAnimation);
-
-        function viewportAnimation() {
-
-            let scrollY = window.pageYOffset;
-
-            blocks.forEach(function(current) {
-
-                const viewportHeight = window.innerHeight;
-                const triggerTop = (current.offsetTop + (viewportHeight * .2)) - viewportHeight;
-                const blockHeight = current.offsetHeight;
-                const blockSpace = triggerTop + blockHeight;
-                const inView = scrollY > triggerTop && scrollY <= blockSpace;
-                const isAnimated = current.classList.contains("ss-animated");
-
-                if (inView && (!isAnimated)) {
-                    anime({
-                        targets: current.querySelectorAll("[data-animate-el]"),
-                        opacity: [0, 1],
-                        translateY: [50, 0], // Reduced movement for subtlety
-                        delay: anime.stagger(200, {start: 100}), // Faster stagger
-                        duration: 1200, // Slower duration for elegance
-                        easing: 'easeOutCubic', // Softer ease out
-                        begin: function(anim) {
-                            current.classList.add("ss-animated");
-                        }
-                    });
-                }
-            });
+        if (prefersReducedMotion.matches || !('IntersectionObserver' in window)) {
+            blocks.forEach(function(block) { block.classList.add('is-revealed'); });
+            return;
         }
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('is-revealed');
+                observer.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -15% 0px' });
+
+        blocks.forEach(function(block) { observer.observe(block); });
 
     }; // end ssViewAnimate
 
 
-   /* Swiper
-    * ------------------------------------------------------ */ 
-    const ssSwiper = function() {
-
-        const mySwiper = new Swiper('.swiper-container', {
-
-            slidesPerView: 1,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                // when window width is > 400px
-                401: {
-                    slidesPerView: 1,
-                    spaceBetween: 20
-                },
-                // when window width is > 800px
-                801: {
-                    slidesPerView: 2,
-                    spaceBetween: 32
-                },
-                // when window width is > 1200px
-                1201: {
-                    slidesPerView: 2,
-                    spaceBetween: 80
-                }
-            }
-         });
-
-    }; // end ssSwiper
-
-
-   /* Lightbox
+   /* Project dialogs
     * ------------------------------------------------------ */
-    const ssLightbox = function() {
+    const ssProjectDialogs = function() {
 
         const folioLinks = document.querySelectorAll('.folio-list__item-link');
-        const modals = [];
 
         folioLinks.forEach(function(link) {
-            let modalbox = link.getAttribute('href');
-            let instance = basicLightbox.create(
-                document.querySelector(modalbox),
-                {
-                    onShow: function(instance) {
-                        //detect Escape key press
-                        document.addEventListener("keydown", function(event) {
-                            event = event || window.event;
-                            if (event.keyCode === 27) {
-                                instance.close();
-                            }
-                        });
-                    }
-                }
-            )
-            modals.push(instance);
-        });
+            const dialog = document.querySelector(link.getAttribute('href'));
+            if (!dialog || typeof dialog.showModal !== 'function') return;
 
-        folioLinks.forEach(function(link, index) {
-            link.addEventListener("click", function(event) {
+            link.addEventListener('click', function(event) {
                 event.preventDefault();
-                modals[index].show();
+                dialog.showModal();
+            });
+
+            dialog.querySelector('.project-dialog__close').addEventListener('click', function() {
+                dialog.close();
+            });
+
+            // clicks on the ::backdrop target the dialog element itself
+            dialog.addEventListener('click', function(event) {
+                if (event.target === dialog) dialog.close();
+            });
+
+            dialog.addEventListener('close', function() {
+                link.focus({ preventScroll: true });
             });
         });
 
-    };  // end ssLightbox
-
-
-   /* Alert boxes
-    * ------------------------------------------------------ */
-    const ssAlertBoxes = function() {
-
-        const boxes = document.querySelectorAll('.alert-box');
-  
-        boxes.forEach(function(box){
-
-            box.addEventListener('click', function(event) {
-                if (event.target.matches(".alert-box__close")) {
-                    event.stopPropagation();
-                    event.target.parentElement.classList.add("hideit");
-
-                    setTimeout(function(){
-                        box.style.display = "none";
-                    }, 500)
-                }    
-            });
-
-        })
-
-    }; // end ssAlertBoxes
-
-
-   /* Smoothscroll
-    * ------------------------------------------------------ */
-    const ssMoveTo = function(){
-
-        const easeFunctions = {
-            easeInQuad: function (t, b, c, d) {
-                t /= d;
-                return c * t * t + b;
-            },
-            easeOutQuad: function (t, b, c, d) {
-                t /= d;
-                return -c * t* (t - 2) + b;
-            },
-            easeInOutQuad: function (t, b, c, d) {
-                t /= d/2;
-                if (t < 1) return c/2*t*t + b;
-                t--;
-                return -c/2 * (t*(t-2) - 1) + b;
-            },
-            easeInOutCubic: function (t, b, c, d) {
-                t /= d/2;
-                if (t < 1) return c/2*t*t*t + b;
-                t -= 2;
-                return c/2*(t*t*t + 2) + b;
-            }
+        if (window.location.hash) {
+            const target = document.getElementById(window.location.hash.slice(1));
+            if (target && target.tagName === 'DIALOG' && typeof target.showModal === 'function') target.showModal();
         }
 
-        const triggers = document.querySelectorAll('.smoothscroll');
-        
-        const moveTo = new MoveTo({
-            tolerance: 0,
-            duration: 1200,
-            easing: 'easeInOutCubic',
-            container: window
-        }, easeFunctions);
-
-        triggers.forEach(function(trigger) {
-            moveTo.registerTrigger(trigger);
-        });
-
-    }; // end ssMoveTo
-
-
-   /* CV Download Tracking
-    * ------------------------------------------------------ */
-    const ssCvDownload = function() {
-        
-        const downloadBtn = document.getElementById('cv-download-btn');
-        const viewLink = document.querySelector('.download-cv-link');
-        
-        if (downloadBtn) {
-            downloadBtn.addEventListener('click', function() {
-                console.log('CV download initiated');
-                // Optional: Add analytics tracking here
-                // Example: gtag('event', 'download', { 'file_name': 'cv.pdf' });
-            });
-        }
-        
-        if (viewLink) {
-            viewLink.addEventListener('click', function() {
-                console.log('CV view in browser initiated');
-                // Optional: Add analytics tracking here
-            });
-        }
-        
-    }; // end ssCvDownload
+    }; // end ssProjectDialogs
 
 
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
 
-        ssPreloader();
         ssMobileMenu();
         ssScrollSpy();
         ssViewAnimate();
-        ssSwiper();
-        ssLightbox();
-        ssAlertBoxes();
-        ssMoveTo();
-        ssCvDownload();
+        ssProjectDialogs();
 
     })();
 
-})(document.documentElement);
+})();
