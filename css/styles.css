@@ -3500,28 +3500,30 @@ img.u-pull-left {
 }
 
 .about-info__pic {
-  object-fit: cover;
+  object-fit: contain;
   margin: 0;
   vertical-align: bottom;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: 100%;
   display: block;
 }
 
+.about-info .column.about-info__pic-block {
+  overflow: visible;
+}
+
 .about-info__pic-block {
-  overflow: hidden;
+  overflow: visible;
   padding: 0;
   display: flex;
   align-items: stretch;
-  max-height: 600px;
 }
 
 .about-info__pic-block img {
   width: 100%;
-  height: 100%;
-  max-height: 600px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
 
 .about-info__text {
