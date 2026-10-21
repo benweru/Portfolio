@@ -3496,11 +3496,9 @@ img.u-pull-left {
 
 .about-info .column {
   flex-shrink: 0;
-  overflow: hidden;
 }
 
 .about-info__pic {
-  object-fit: contain;
   margin: 0;
   vertical-align: bottom;
   width: 100%;
@@ -3509,21 +3507,13 @@ img.u-pull-left {
   display: block;
 }
 
-.about-info .column.about-info__pic-block {
-  overflow: visible;
-}
-
 .about-info__pic-block {
-  overflow: visible;
   padding: 0;
-  display: flex;
-  align-items: stretch;
 }
 
 .about-info__pic-block img {
   width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
 .about-info__text {
